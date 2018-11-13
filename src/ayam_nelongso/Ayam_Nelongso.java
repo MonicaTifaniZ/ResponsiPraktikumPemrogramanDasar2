@@ -27,6 +27,7 @@ public static Scanner sc = new Scanner(System.in);
     public static int nonot[] = new int[100];
  
     public static void main(String[] args) {
+		//Tes Push Desktop
         arrharga[1] = 10000;
         arrharga[2] = 9000;
         arrharga[3] = 15000;
