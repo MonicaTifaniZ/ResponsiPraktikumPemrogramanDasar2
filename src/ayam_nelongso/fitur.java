@@ -130,7 +130,8 @@ public class fitur extends javax.swing.JFrame {
     }//GEN-LAST:event_transaksiMouseClicked
 
     private void transaksiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transaksiActionPerformed
-        // TODO add your handling code here:
+        this.setVisible(false);
+        new transaksi().setVisible(true);
     }//GEN-LAST:event_transaksiActionPerformed
 
     /**

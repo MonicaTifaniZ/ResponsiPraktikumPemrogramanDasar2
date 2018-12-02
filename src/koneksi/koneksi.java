@@ -8,26 +8,25 @@ package koneksi;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author ASUS
  */
 public class koneksi {
-    private static Connection konek;
-    public static Connection getConnection(){
-        if(konek == null){
-            try{
+
+    private static Connection konekin;
+
+    public static Connection getConnection() { //getConnection nama var
+        if (konekin == null) {
+            try {
                 DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-                konek = DriverManager.getConnection("");
-                
-            } catch (SQLException ex){
-                Logger.getLogger(koneksi.class.getName()).log(Level.SEVERE, null , ex);
+                konekin = DriverManager.getConnection("jdbc:mysql://localhost:3306/responsi", "root", ""); // jdbc blabla = alamatnya , 3306 = defaultnya , root = user login db, "" = password default
+            } catch (SQLException sqlex) {
+                JOptionPane.showMessageDialog(null, sqlex.getMessage());
             }
         }
-        return konek;
+        return konekin;
     }
-    
 }

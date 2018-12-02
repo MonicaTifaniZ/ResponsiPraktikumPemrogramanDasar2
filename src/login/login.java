@@ -6,7 +6,14 @@
 package login;
 
 import ayam_nelongso.fitur;
+import ayam_nelongso.transaksi;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import koneksi.koneksi;
 
 /**
  *
@@ -20,6 +27,48 @@ public class login extends javax.swing.JFrame {
     public login() {
         initComponents();
         this.setLocationRelativeTo(null);
+    }
+
+    private void loginsistem() throws SQLException {
+        String usernya = namauser.getText();
+        String passwordnya = String.valueOf(passuser.getPassword());
+        if (usernya.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Username tidak boleh kosong!");
+        } else if (passwordnya.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Password tidak boleh kosong!");
+        } else {
+            try {
+                Connection c = koneksi.getConnection();
+                String sql = "SELECT * FROM User WHERE Username='" + usernya + "'";
+                Statement s = c.createStatement();
+                ResultSet r = s.executeQuery(sql);
+                boolean ada = r.next();
+                if (!ada) {
+                    JOptionPane.showMessageDialog(null, "cc");
+                } else {
+
+                    String s_cek = r.getString("ID");
+                    char c_cek = s_cek.charAt(0);
+                    if (c_cek != 'A' && passwordnya.equalsIgnoreCase(r.getString("Password"))) {
+                        this.setVisible(false);
+                        transaksi kasir = new transaksi();
+                        kasir.setVisible(true);
+                    } else if (c_cek == 'A' && passwordnya.equalsIgnoreCase(r.getString("Password"))) {
+                        this.setVisible(false);
+                        fitur admin = new fitur();
+                        admin.setVisible(true);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Username atau Password Salah");
+                        namauser.setText("");
+                        namauser.setText(" ");
+                    }
+                }
+
+            } catch (SQLException e) {
+                JOptionPane.showMessageDialog(null, " Bye error : " + e.getMessage());
+            }
+        }
+
     }
 
     /**
@@ -146,6 +195,11 @@ public class login extends javax.swing.JFrame {
                 masukMouseClicked(evt);
             }
         });
+        masuk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                masukActionPerformed(evt);
+            }
+        });
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 102, 102));
@@ -206,9 +260,16 @@ public class login extends javax.swing.JFrame {
     }//GEN-LAST:event_keluarMouseClicked
 
     private void masukMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_masukMouseClicked
-        this.setVisible(false);
-        new fitur().setVisible(true);
+        
     }//GEN-LAST:event_masukMouseClicked
+
+    private void masukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_masukActionPerformed
+        try {
+            loginsistem();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+    }//GEN-LAST:event_masukActionPerformed
 
     /**
      * @param args the command line arguments
