@@ -6,12 +6,14 @@
 
 package ayam_nelongso;
 import java.util.*;
+import javax.swing.JOptionPane;
 /**
  *
  * @author ASUS
  */
 public class fitur extends javax.swing.JFrame {
 
+    public static String nama;
     /** Creates new form fitur */
     public fitur() {
         initComponents();
@@ -67,9 +69,19 @@ public class fitur extends javax.swing.JFrame {
 
         crud.setText("Kelola Menu");
         crud.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        crud.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                crudActionPerformed(evt);
+            }
+        });
 
         kembali.setText("Exit");
         kembali.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        kembali.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kembaliActionPerformed(evt);
+            }
+        });
 
         info_sistem.setText("Info");
         info_sistem.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -106,6 +118,20 @@ public class fitur extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void kembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kembaliActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        new login.login().setVisible(true);
+    }//GEN-LAST:event_kembaliActionPerformed
+
+    private void crudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crudActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        kelola_menu kelola = new kelola_menu();
+        kelola.admin.setText(nama);
+        kelola.setVisible(true);
+    }//GEN-LAST:event_crudActionPerformed
 
     /**
      * @param args the command line arguments
@@ -145,7 +171,7 @@ public class fitur extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton crud;
     private javax.swing.JButton info_sistem;
-    private javax.swing.JLabel jLabel1;
+    public static javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JButton kembali;

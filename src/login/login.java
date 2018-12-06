@@ -25,6 +25,7 @@ public class login extends javax.swing.JFrame {
      * Creates new form login
      */
     String[] id_parse = new String[1];
+
     public login() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -57,6 +58,8 @@ public class login extends javax.swing.JFrame {
                     } else if (c_cek == 'A' && passwordnya.equalsIgnoreCase(r.getString("Password"))) {
                         this.setVisible(false);
                         fitur admin = new fitur();
+//                        admin.jLabel1.setText(s_cek);
+                        admin.nama = s_cek;
                         admin.setVisible(true);
                     } else {
                         JOptionPane.showMessageDialog(null, "Username atau Password Salah");
@@ -229,7 +232,7 @@ public class login extends javax.swing.JFrame {
     }//GEN-LAST:event_passuserActionPerformed
 
     private void masukMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_masukMouseClicked
-        
+
     }//GEN-LAST:event_masukMouseClicked
 
     private void masukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_masukActionPerformed
