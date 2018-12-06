@@ -24,6 +24,7 @@ public class login extends javax.swing.JFrame {
     /**
      * Creates new form login
      */
+    String[] id_parse = new String[1];
     public login() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -44,15 +45,14 @@ public class login extends javax.swing.JFrame {
                 ResultSet r = s.executeQuery(sql);
                 boolean ada = r.next();
                 if (!ada) {
-                    JOptionPane.showMessageDialog(null, "cc");
+                    JOptionPane.showMessageDialog(null, "User Tidak Tersedia!");
                 } else {
-
                     String s_cek = r.getString("ID");
                     char c_cek = s_cek.charAt(0);
                     if (c_cek != 'A' && passwordnya.equalsIgnoreCase(r.getString("Password"))) {
                         this.setVisible(false);
                         transaksi kasir = new transaksi();
-                        kasir.nama_kasir.setText(namauser.getText());
+                        kasir.nama_kasir.setText(r.getString("ID"));
                         kasir.setVisible(true);
                     } else if (c_cek == 'A' && passwordnya.equalsIgnoreCase(r.getString("Password"))) {
                         this.setVisible(false);
@@ -119,10 +119,10 @@ public class login extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(56, 56, 56)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(96, Short.MAX_VALUE)
                 .addComponent(jLabel3)
-                .addContainerGap(74, Short.MAX_VALUE))
+                .addGap(83, 83, 83))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
