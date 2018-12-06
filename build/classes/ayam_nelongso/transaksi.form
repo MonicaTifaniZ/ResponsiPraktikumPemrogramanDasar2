@@ -472,11 +472,11 @@
                                   <EmptySpace min="-2" pref="572" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
-                                  <Component id="masuk3" min="-2" pref="74" max="-2" attributes="0"/>
+                                  <Component id="proses_transaksi" min="-2" pref="74" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
                                   <Component id="masuk4" min="-2" pref="74" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
-                                  <Component id="masuk" min="-2" pref="74" max="-2" attributes="0"/>
+                                  <Component id="kembali" min="-2" pref="74" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -571,9 +571,9 @@
                   </Group>
                   <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="masuk3" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                      <Component id="proses_transaksi" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                       <Component id="masuk4" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                      <Component id="masuk" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                      <Component id="kembali" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
               </Group>
@@ -730,7 +730,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="masuk">
+        <Component class="javax.swing.JButton" name="kembali">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="f0" green="a7" red="22" type="rgb"/>
@@ -747,8 +747,8 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="masukMouseClicked"/>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="masukActionPerformed"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="kembaliMouseClicked"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="kembaliActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JComboBox" name="nama_makanan">
@@ -764,7 +764,7 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JButton" name="masuk3">
+        <Component class="javax.swing.JButton" name="proses_transaksi">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="f0" green="a7" red="22" type="rgb"/>
@@ -780,6 +780,9 @@
               <Border info="null"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="proses_transaksiActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="masuk4">
           <Properties>

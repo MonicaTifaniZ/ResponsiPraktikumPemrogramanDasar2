@@ -21,10 +21,10 @@ import koneksi.koneksi;
 public class transaksi extends javax.swing.JFrame {
 
     ArrayList daftar = new ArrayList();
+    ArrayList<nota_helper> nota_sementara = new ArrayList<nota_helper>();
     Connection konek = koneksi.getConnection();
+    int ambil_total = 0;
     Statement stment;
-    
-    static String id_karyawan;
 
     /**
      * Creates new form transaksi
@@ -97,7 +97,7 @@ public class transaksi extends javax.swing.JFrame {
         int jum_harga2 = Integer.parseInt(jumlah_minum.getText());
         int tot1 = harga1 * jum_harga1;
         int tot2 = harga2 * jum_harga2;
-        int total_3 = tot1 + tot2;
+        //int total_3 = tot1 + tot2;
         daftar.add(daftar_makanan);
         daftar.add(daftar_minuman);
         daftar.add(sim_harga1);
@@ -106,8 +106,10 @@ public class transaksi extends javax.swing.JFrame {
         daftar.add(jumlah_minum.getText());
         if (jumlah_makan.getText().equalsIgnoreCase("0")) {
             daftar.add(Integer.toString(tot2));
+            ambil_total = tot2;
         } else if (jumlah_minum.getText().equalsIgnoreCase("0")) {
             daftar.add(Integer.toString(tot1));
+            ambil_total = tot1;
         }
         jumlah_makan.setText("0");
         jumlah_minum.setText("0");
@@ -168,9 +170,9 @@ public class transaksi extends javax.swing.JFrame {
         kem = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        masuk = new javax.swing.JButton();
+        kembali = new javax.swing.JButton();
         nama_makanan = new javax.swing.JComboBox<>();
-        masuk3 = new javax.swing.JButton();
+        proses_transaksi = new javax.swing.JButton();
         masuk4 = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
@@ -421,19 +423,19 @@ public class transaksi extends javax.swing.JFrame {
             jTable1.getColumnModel().getColumn(6).setPreferredWidth(80);
         }
 
-        masuk.setBackground(new java.awt.Color(34, 167, 240));
-        masuk.setFont(new java.awt.Font("Tekton Pro", 1, 18)); // NOI18N
-        masuk.setForeground(new java.awt.Color(255, 255, 255));
-        masuk.setText("Back");
-        masuk.setBorder(null);
-        masuk.addMouseListener(new java.awt.event.MouseAdapter() {
+        kembali.setBackground(new java.awt.Color(34, 167, 240));
+        kembali.setFont(new java.awt.Font("Tekton Pro", 1, 18)); // NOI18N
+        kembali.setForeground(new java.awt.Color(255, 255, 255));
+        kembali.setText("Back");
+        kembali.setBorder(null);
+        kembali.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                masukMouseClicked(evt);
+                kembaliMouseClicked(evt);
             }
         });
-        masuk.addActionListener(new java.awt.event.ActionListener() {
+        kembali.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                masukActionPerformed(evt);
+                kembaliActionPerformed(evt);
             }
         });
 
@@ -443,11 +445,16 @@ public class transaksi extends javax.swing.JFrame {
             }
         });
 
-        masuk3.setBackground(new java.awt.Color(34, 167, 240));
-        masuk3.setFont(new java.awt.Font("Tekton Pro", 1, 18)); // NOI18N
-        masuk3.setForeground(new java.awt.Color(255, 255, 255));
-        masuk3.setText("Process");
-        masuk3.setBorder(null);
+        proses_transaksi.setBackground(new java.awt.Color(34, 167, 240));
+        proses_transaksi.setFont(new java.awt.Font("Tekton Pro", 1, 18)); // NOI18N
+        proses_transaksi.setForeground(new java.awt.Color(255, 255, 255));
+        proses_transaksi.setText("Process");
+        proses_transaksi.setBorder(null);
+        proses_transaksi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                proses_transaksiActionPerformed(evt);
+            }
+        });
 
         masuk4.setBackground(new java.awt.Color(255, 0, 0));
         masuk4.setFont(new java.awt.Font("Tekton Pro", 1, 18)); // NOI18N
@@ -656,11 +663,11 @@ public class transaksi extends javax.swing.JFrame {
                                 .addComponent(jLabel22)
                                 .addGap(572, 572, 572))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                                .addComponent(masuk3, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(proses_transaksi, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(117, 117, 117)
                                 .addComponent(masuk4, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(115, 115, 115)
-                                .addComponent(masuk, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(kembali, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(56, 56, 56))))))
         );
         jPanel4Layout.setVerticalGroup(
@@ -730,9 +737,9 @@ public class transaksi extends javax.swing.JFrame {
                     .addComponent(bayar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(45, 45, 45)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(masuk3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(proses_transaksi, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(masuk4, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(masuk, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(kembali, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29))
         );
 
@@ -749,10 +756,10 @@ public class transaksi extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_masuk4MouseClicked
 
-    private void masukMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_masukMouseClicked
+    private void kembaliMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kembaliMouseClicked
         this.setVisible(false);
         new fitur().setVisible(true);
-    }//GEN-LAST:event_masukMouseClicked
+    }//GEN-LAST:event_kembaliMouseClicked
 
     private void nama_minumanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nama_minumanActionPerformed
         // TODO add your handling code here:
@@ -766,6 +773,8 @@ public class transaksi extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (nama_minuman.getSelectedIndex() != 0) {
             if (Integer.parseInt(jumlah_minum.getText()) > 0) {
+                int jml = Integer.parseInt(jumlah_minum.getText());
+                boolean cek = false;
                 daftar.clear();
                 table();
                 DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
@@ -773,6 +782,24 @@ public class transaksi extends javax.swing.JFrame {
                     "-", daftar.get(1), "-", daftar.get(3), "-", daftar.get(5), daftar.get(6)
                 });
                 total_bayar();
+                if (!nota_sementara.isEmpty()) {
+                    for (int i = 0; i < nota_sementara.size(); i++) {
+                        if (nota_sementara.get(i).nama.equalsIgnoreCase(String.valueOf(nama_minuman.getSelectedItem()))) {
+                            nota_sementara.get(i).jumlah_beli = nota_sementara.get(i).jumlah_beli + jml;
+                            nota_sementara.get(i).total_harga = nota_sementara.get(i).total_harga + ambil_total;
+                            cek = false;
+                            break;
+                        } else {
+                            cek = true;
+                        }
+                    }
+                } else {
+                    nota_sementara.add(new nota_helper(String.valueOf(nama_minuman.getSelectedItem()), jml, ambil_total));
+                }
+
+                if (cek) {
+                    nota_sementara.add(new nota_helper(String.valueOf(nama_minuman.getSelectedItem()), jml, ambil_total));
+                }
             } else {
                 JOptionPane.showMessageDialog(null, "Jumlah minuman tidak valid!");
             }
@@ -785,6 +812,8 @@ public class transaksi extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (nama_makanan.getSelectedIndex() != 0) {
             if (Integer.parseInt(jumlah_makan.getText()) > 0) {
+                int jml = Integer.parseInt(jumlah_makan.getText());
+                boolean cek = false;
                 daftar.clear();
                 table();
                 DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
@@ -792,6 +821,23 @@ public class transaksi extends javax.swing.JFrame {
                     daftar.get(0), "-", daftar.get(2), "-", daftar.get(4), "-", daftar.get(6)
                 });
                 total_bayar();
+                if (!nota_sementara.isEmpty()) {
+                    for (int i = 0; i < nota_sementara.size(); i++) {
+                        if (nota_sementara.get(i).nama.equalsIgnoreCase(String.valueOf(nama_makanan.getSelectedItem()))) {
+                            nota_sementara.get(i).jumlah_beli = nota_sementara.get(i).jumlah_beli + jml;
+                            nota_sementara.get(i).total_harga = nota_sementara.get(i).total_harga + ambil_total;
+                            cek = false;
+                            break;
+                        } else {
+                            cek = true;
+                        }
+                    }
+                } else {
+                    nota_sementara.add(new nota_helper(String.valueOf(nama_makanan.getSelectedItem()), jml, ambil_total));
+                }
+                if (cek) {
+                    nota_sementara.add(new nota_helper(String.valueOf(nama_makanan.getSelectedItem()), jml, ambil_total));
+                }
             } else {
                 JOptionPane.showMessageDialog(null, "Jumlah makanan tidak valid!");
             }
@@ -812,13 +858,20 @@ public class transaksi extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_bayarKeyReleased
 
-    private void masukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_masukActionPerformed
+    private void kembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kembaliActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_masukActionPerformed
+    }//GEN-LAST:event_kembaliActionPerformed
 
     private void nama_pembeliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nama_pembeliActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nama_pembeliActionPerformed
+
+    private void proses_transaksiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_proses_transaksiActionPerformed
+        // TODO add your handling code here:
+        for (int i = 0; i < nota_sementara.size(); i++) {
+            JOptionPane.showMessageDialog(null, nota_sementara.get(i).nama + " | " + nota_sementara.get(i).jumlah_beli + " | " + nota_sementara.get(i).total_harga + " | ");
+        }
+    }//GEN-LAST:event_proses_transaksiActionPerformed
 
     /**
      * @param args the command line arguments
@@ -850,8 +903,6 @@ public class transaksi extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                id_karyawan = args[0];
-                nama_kasir.setText(id_karyawan);
                 new transaksi().setVisible(true);
             }
         });
@@ -908,14 +959,14 @@ public class transaksi extends javax.swing.JFrame {
     private javax.swing.JTextField jumlah_makan;
     private javax.swing.JTextField jumlah_minum;
     private javax.swing.JLabel kem;
+    private javax.swing.JButton kembali;
     private javax.swing.JTextField kembalian;
-    private javax.swing.JButton masuk;
-    private javax.swing.JButton masuk3;
     private javax.swing.JButton masuk4;
     public static javax.swing.JLabel nama_kasir;
     private javax.swing.JComboBox<String> nama_makanan;
     private javax.swing.JComboBox<String> nama_minuman;
     private javax.swing.JTextField nama_pembeli;
+    private javax.swing.JButton proses_transaksi;
     private javax.swing.JLabel tot;
     private javax.swing.JTextField total_bayar;
     // End of variables declaration//GEN-END:variables
