@@ -18,31 +18,29 @@ import koneksi.koneksi;
  *
  * @author RISKY
  */
-public class kelola_menu extends javax.swing.JFrame {
+public class kelola_menuminum extends javax.swing.JFrame {
     Connection konek = koneksi.getConnection();
     Statement stment;
-    public String mkn,hrg,stk, nama;
-        ArrayList<kelola_menu> al = new ArrayList();
+    public String mnm,hrgm,stkm, nama;
+        ArrayList<kelola_menuminum> al = new ArrayList();
     /**
      * Creates new form kelola_menu
      */
-    public kelola_menu() {   
+    public kelola_menuminum() {   
         initComponents();
         admin.setEditable(false);
-        lht_mkn();
-        
-        
+        lht_mnm();
         
     }
-    kelola_menu(String mkan, String hrga, String stok) {
-        mkn = mkan;
-        hrg = hrga;
-        stk = stok;
+    kelola_menuminum(String minum, String hrgam, String stokm) {
+        mnm = minum;
+        hrgm = hrgam;
+        stkm = stokm;
     }
-    public void create1() {
+    public void create2() {
         try {
             stment = konek.createStatement();
-            String sql = "Insert into Makanan (Nama_Makanan,Harga,Stock_Makanan) values ('"+input_mkn.getText()+"','" +hrg_mkn1.getText()+ "','" +stock_mkn1.getText()+ "')";
+            String sql = "Insert into Minuman (Nama_Minuman,Harga,Stock_Minuman) values ('"+input_mnm.getText()+"','" +hrg_mnm1.getText()+ "','" +stock_mnm1.getText()+ "')";
             stment.execute(sql);
             //bersih();
             //data_admin();
@@ -52,35 +50,35 @@ public class kelola_menu extends javax.swing.JFrame {
         }
     }
     
-    public void lht_mkn () {
-      DefaultTableModel tb = (DefaultTableModel) lihat_mkn.getModel();
+    public void lht_mnm () {
+      DefaultTableModel tb = (DefaultTableModel) lihat_mnm.getModel();
         try {
             stment = konek.createStatement();
-            String sql = "select * from Makanan";
+            String sql = "select * from Minuman";
             ResultSet rs = stment.executeQuery(sql);
 
             while (rs.next()) {
-                al.add(new kelola_menu(rs.getString("Nama_Makanan"), rs.getString("Harga"), rs.getString("Stock_Makanan")));
+                al.add(new kelola_menuminum(rs.getString("Nama_Minuman"), rs.getString("Harga"), rs.getString("Stock_Minuman")));
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
         for (int i = 0; i < al.size(); i++) {
             tb.addRow(new Object[]{
-                al.get(i).mkn, al.get(i).hrg, al.get(i).stk
+                al.get(i).mnm, al.get(i).hrgm, al.get(i).stkm
             });
         }
     }
-    public void update1(){
-        int i = lihat_mkn.getSelectedRow();
+    public void update2(){
+        int i = lihat_mnm.getSelectedRow();
         if(i<0){
             JOptionPane.showMessageDialog(null, "Pilih Data yang ingin diedit");
         }else{
-            DefaultTableModel tb = (DefaultTableModel) lihat_mkn.getModel();
+            DefaultTableModel tb = (DefaultTableModel) lihat_mnm.getModel();
             String kd = tb.getValueAt(i, 0).toString();
             try{
                 stment = konek.createStatement();
-                String sql = "Update Makanan set Nama_Makanan = '"+input_mkn.getText()+"', Harga = '"+hrg_mkn1.getText()+"', Stock_Makanan='"+stock_mkn1.getText()+"' where Nama_Makanan = '"+kd+"'";
+                String sql = "Update Minuman set Nama_Minuman = '"+input_mnm.getText()+"', Harga = '"+hrg_mnm1.getText()+"', Stock_Minuman='"+stock_mnm1.getText()+"' where Nama_Minuman = '"+kd+"'";
                 stment.execute(sql);
                 //bersih();
                 //data_kasir();
@@ -92,7 +90,7 @@ public class kelola_menu extends javax.swing.JFrame {
     }
     public void bersih() {
         al.clear();
-        DefaultTableModel tb = (DefaultTableModel) lihat_mkn.getModel();
+        DefaultTableModel tb = (DefaultTableModel) lihat_mnm.getModel();
         while (tb.getRowCount() > 0) {
             for (int i = 0; i < tb.getRowCount(); ++i) {
                 tb.removeRow(i);
@@ -100,19 +98,19 @@ public class kelola_menu extends javax.swing.JFrame {
         }
     }
     public void delete1(){
-        int i = lihat_mkn.getSelectedRow();
+        int i = lihat_mnm.getSelectedRow();
         if(i<0){
             JOptionPane.showMessageDialog(null, "Pilih data yang akan dihapus");
         }else{
-            DefaultTableModel tb = (DefaultTableModel) lihat_mkn.getModel();
+            DefaultTableModel tb = (DefaultTableModel) lihat_mnm.getModel();
             String kd = tb.getValueAt(i, 0).toString();
             
                 try{
                     stment = konek.createStatement();
-                    String sql = "delete from Makanan where Nama_Makanan='"+kd+"'";
+                    String sql = "delete from Minuman where Nama_Minuman='"+kd+"'";
                     stment.execute(sql);
                     bersih();
-                    lht_mkn();
+                    lht_mnm();
                     JOptionPane.showMessageDialog(null, "Data Berhasil Dihapus");
                 }catch(SQLException e){
                     JOptionPane.showMessageDialog(null, e.getMessage());
@@ -142,12 +140,12 @@ public class kelola_menu extends javax.swing.JFrame {
         delete = new javax.swing.JButton();
         update = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
-        lihat_mkn = new javax.swing.JTable();
-        input_mkn = new javax.swing.JTextField();
+        lihat_mnm = new javax.swing.JTable();
+        input_mnm = new javax.swing.JTextField();
         nama_admin = new javax.swing.JLabel();
         admin = new javax.swing.JTextField();
-        hrg_mkn1 = new javax.swing.JTextField();
-        stock_mkn1 = new javax.swing.JTextField();
+        hrg_mnm1 = new javax.swing.JTextField();
+        stock_mnm1 = new javax.swing.JTextField();
         stock_mkn = new javax.swing.JLabel();
         mknn = new javax.swing.JLabel();
         hrg_mkn = new javax.swing.JLabel();
@@ -229,12 +227,12 @@ public class kelola_menu extends javax.swing.JFrame {
             }
         });
 
-        lihat_mkn.setModel(new javax.swing.table.DefaultTableModel(
+        lihat_mnm.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Makanan", "Harga", "Stock"
+                "Minuman", "Harga", "Stock"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -245,17 +243,17 @@ public class kelola_menu extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        lihat_mkn.addMouseListener(new java.awt.event.MouseAdapter() {
+        lihat_mnm.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lihat_mknMouseClicked(evt);
+                lihat_mnmMouseClicked(evt);
             }
         });
-        jScrollPane3.setViewportView(lihat_mkn);
-        if (lihat_mkn.getColumnModel().getColumnCount() > 0) {
-            lihat_mkn.getColumnModel().getColumn(0).setResizable(false);
-            lihat_mkn.getColumnModel().getColumn(0).setPreferredWidth(180);
-            lihat_mkn.getColumnModel().getColumn(1).setResizable(false);
-            lihat_mkn.getColumnModel().getColumn(2).setResizable(false);
+        jScrollPane3.setViewportView(lihat_mnm);
+        if (lihat_mnm.getColumnModel().getColumnCount() > 0) {
+            lihat_mnm.getColumnModel().getColumn(0).setResizable(false);
+            lihat_mnm.getColumnModel().getColumn(0).setPreferredWidth(180);
+            lihat_mnm.getColumnModel().getColumn(1).setResizable(false);
+            lihat_mnm.getColumnModel().getColumn(2).setResizable(false);
         }
 
         nama_admin.setText("Nama Admin :");
@@ -269,7 +267,7 @@ public class kelola_menu extends javax.swing.JFrame {
 
         stock_mkn.setText("Stock     :");
 
-        mknn.setText("Makanan  : ");
+        mknn.setText("Minuman  : ");
 
         hrg_mkn.setText("Harga     : ");
 
@@ -300,12 +298,12 @@ public class kelola_menu extends javax.swing.JFrame {
                                         .addComponent(hrg_mkn)
                                         .addGap(18, 18, 18)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(input_mkn, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(hrg_mkn1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addComponent(input_mnm, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(hrg_mnm1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(stock_mkn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addGap(18, 18, 18)
-                                        .addComponent(stock_mkn1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                        .addComponent(stock_mnm1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addGap(85, 85, 85)
                         .addComponent(delete, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(19, Short.MAX_VALUE))
@@ -332,16 +330,16 @@ public class kelola_menu extends javax.swing.JFrame {
                     .addComponent(update, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(11, 11, 11)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(input_mkn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(input_mnm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(mknn, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(hrg_mkn1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(hrg_mnm1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(hrg_mkn, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(stock_mkn, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(stock_mkn1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(stock_mnm1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -382,23 +380,23 @@ public class kelola_menu extends javax.swing.JFrame {
 
     private void createActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createActionPerformed
         // TODO add your handling code here:
-       create1();
+       create2();
        bersih();
-       lht_mkn();
+       lht_mnm();
     }//GEN-LAST:event_createActionPerformed
 
     private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
         // TODO add your handling code here:
-        update1();
+        update2();
         bersih();
-        lht_mkn();
+        lht_mnm();
     }//GEN-LAST:event_updateActionPerformed
 
     private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
         // TODO add your handling code here:
         delete1();
         bersih();
-        lht_mkn();
+        lht_mnm();
     }//GEN-LAST:event_deleteActionPerformed
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
@@ -421,13 +419,14 @@ public class kelola_menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_adminActionPerformed
 
-    private void lihat_mknMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lihat_mknMouseClicked
+    private void lihat_mnmMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lihat_mnmMouseClicked
         // TODO add your handling code here:
-        int a = lihat_mkn.getSelectedRow();
-        input_mkn.setText((String)lihat_mkn.getValueAt(a, 0));
-        hrg_mkn1.setText((String)lihat_mkn.getValueAt(a, 1));
-        stock_mkn1.setText((String)lihat_mkn.getValueAt(a, 2));
-    }//GEN-LAST:event_lihat_mknMouseClicked
+        int a = lihat_mnm.getSelectedRow();
+        input_mnm.setText((String)lihat_mnm.getValueAt(a, 0));
+        hrg_mnm1.setText((String)lihat_mnm.getValueAt(a, 1));
+        stock_mnm1.setText((String)lihat_mnm.getValueAt(a, 2));
+        
+    }//GEN-LAST:event_lihat_mnmMouseClicked
 
     /**
      * @param args the command line arguments
@@ -446,20 +445,21 @@ public class kelola_menu extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(kelola_menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(kelola_menuminum.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(kelola_menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(kelola_menuminum.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(kelola_menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(kelola_menuminum.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(kelola_menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(kelola_menuminum.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new kelola_menu().setVisible(true);
+                new kelola_menuminum().setVisible(true);
             }
         });
     }
@@ -470,8 +470,8 @@ public class kelola_menu extends javax.swing.JFrame {
     private javax.swing.JButton create;
     private javax.swing.JButton delete;
     private javax.swing.JLabel hrg_mkn;
-    private javax.swing.JTextField hrg_mkn1;
-    private javax.swing.JTextField input_mkn;
+    private javax.swing.JTextField hrg_mnm1;
+    private javax.swing.JTextField input_mnm;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
@@ -480,11 +480,11 @@ public class kelola_menu extends javax.swing.JFrame {
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable3;
     private javax.swing.JTextField jumlah_minum3;
-    private javax.swing.JTable lihat_mkn;
+    private javax.swing.JTable lihat_mnm;
     private javax.swing.JLabel mknn;
     private javax.swing.JLabel nama_admin;
     private javax.swing.JLabel stock_mkn;
-    private javax.swing.JTextField stock_mkn1;
+    private javax.swing.JTextField stock_mnm1;
     private javax.swing.JButton update;
     // End of variables declaration//GEN-END:variables
 }

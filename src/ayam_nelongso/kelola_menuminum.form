@@ -152,14 +152,14 @@
                                           <Component id="hrg_mkn" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="1" attributes="0">
-                                              <Component id="input_mkn" min="-2" pref="181" max="-2" attributes="0"/>
-                                              <Component id="hrg_mkn1" min="-2" pref="181" max="-2" attributes="0"/>
+                                              <Component id="input_mnm" min="-2" pref="181" max="-2" attributes="0"/>
+                                              <Component id="hrg_mnm1" min="-2" pref="181" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <Group type="102" alignment="1" attributes="0">
                                           <Component id="stock_mkn" max="32767" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="stock_mkn1" min="-2" pref="181" max="-2" attributes="0"/>
+                                          <Component id="stock_mnm1" min="-2" pref="181" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -199,18 +199,18 @@
                   </Group>
                   <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="input_mkn" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="input_mnm" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="mknn" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="hrg_mkn1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="hrg_mnm1" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="hrg_mkn" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="stock_mkn" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                      <Component id="stock_mkn1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="stock_mnm1" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jScrollPane3" min="-2" pref="94" max="-2" attributes="0"/>
@@ -259,11 +259,11 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTable" name="lihat_mkn">
+            <Component class="javax.swing.JTable" name="lihat_mnm">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="3" rowCount="0">
-                    <Column editable="false" title="Makanan" type="java.lang.Object"/>
+                    <Column editable="false" title="Minuman" type="java.lang.Object"/>
                     <Column editable="false" title="Harga" type="java.lang.Object"/>
                     <Column editable="false" title="Stock" type="java.lang.Object"/>
                   </Table>
@@ -292,12 +292,12 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lihat_mknMouseClicked"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lihat_mnmMouseClicked"/>
               </Events>
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JTextField" name="input_mkn">
+        <Component class="javax.swing.JTextField" name="input_mnm">
         </Component>
         <Component class="javax.swing.JLabel" name="nama_admin">
           <Properties>
@@ -315,9 +315,9 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JTextField" name="hrg_mkn1">
+        <Component class="javax.swing.JTextField" name="hrg_mnm1">
         </Component>
-        <Component class="javax.swing.JTextField" name="stock_mkn1">
+        <Component class="javax.swing.JTextField" name="stock_mnm1">
         </Component>
         <Component class="javax.swing.JLabel" name="stock_mkn">
           <Properties>
@@ -326,7 +326,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="mknn">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Makanan  : "/>
+            <Property name="text" type="java.lang.String" value="Minuman  : "/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="hrg_mkn">

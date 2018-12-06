@@ -5,8 +5,6 @@
  */
 
 package ayam_nelongso;
-import java.util.*;
-import javax.swing.JOptionPane;
 /**
  *
  * @author ASUS
@@ -127,10 +125,10 @@ public class fitur extends javax.swing.JFrame {
 
     private void crudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crudActionPerformed
         // TODO add your handling code here:
-        this.dispose();
-        kelola_menu kelola = new kelola_menu();
-        kelola.admin.setText(nama);
-        kelola.setVisible(true);
+        this.setVisible(false);
+        Isi_Kelola_Menu kl = new Isi_Kelola_Menu();
+        kl.simpan = nama;
+        kl.setVisible(true);
     }//GEN-LAST:event_crudActionPerformed
 
     /**
