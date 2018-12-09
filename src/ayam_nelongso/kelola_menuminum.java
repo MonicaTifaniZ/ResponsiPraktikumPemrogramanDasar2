@@ -29,7 +29,9 @@ public class kelola_menuminum extends javax.swing.JFrame {
     public kelola_menuminum() {   
         initComponents();
         admin.setEditable(false);
+        this.setLocationRelativeTo(null);
         lht_mnm();
+        
         
     }
     kelola_menuminum(String minum, String hrgam, String stokm) {

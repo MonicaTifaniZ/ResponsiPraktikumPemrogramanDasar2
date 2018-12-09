@@ -18,6 +18,7 @@ public class Isi_Kelola_Menu extends javax.swing.JFrame {
      */
     public Isi_Kelola_Menu() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
     
     

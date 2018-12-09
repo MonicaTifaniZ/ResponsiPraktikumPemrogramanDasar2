@@ -22,7 +22,7 @@ public class koneksi {
         if (konekin == null) {
             try {
                 DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-                konekin = DriverManager.getConnection("jdbc:mysql://localhost:3306/responsi", "root", ""); // jdbc blabla = alamatnya , 3306 = defaultnya , root = user login db, "" = password default
+                konekin = DriverManager.getConnection("jdbc:mysql://localhost:3306/responsiprakpd2", "root", ""); // jdbc blabla = alamatnya , 3306 = defaultnya , root = user login db, "" = password default
             } catch (SQLException sqlex) {
                 JOptionPane.showMessageDialog(null, sqlex.getMessage());
             }

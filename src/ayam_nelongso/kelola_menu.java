@@ -29,6 +29,7 @@ public class kelola_menu extends javax.swing.JFrame {
     public kelola_menu() {   
         initComponents();
         admin.setEditable(false);
+        this.setLocationRelativeTo(null);
         lht_mkn();
         
         
