@@ -5,11 +5,8 @@
  */
 
 package ayam_nelongso;
-<<<<<<< HEAD
 import java.util.*;
 import login.login;
-=======
->>>>>>> 85c0d98e8308466b8618ef5bfa62b0070759ef13
 /**
  *
  * @author ASUS
@@ -36,7 +33,7 @@ public class fitur extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         crud = new javax.swing.JButton();
-        kembali = new javax.swing.JButton();
+        kembalikelola = new javax.swing.JButton();
         info_sistem = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -78,11 +75,11 @@ public class fitur extends javax.swing.JFrame {
             }
         });
 
-        kembali.setText("Back");
-        kembali.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        kembali.addActionListener(new java.awt.event.ActionListener() {
+        kembalikelola.setText("Back");
+        kembalikelola.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        kembalikelola.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                kembaliActionPerformed(evt);
+                kembalikelolaActionPerformed(evt);
             }
         });
 
@@ -107,7 +104,7 @@ public class fitur extends javax.swing.JFrame {
                         .addComponent(info_sistem, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(135, 135, 135)
-                        .addComponent(kembali, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(kembalikelola, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(70, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -118,7 +115,7 @@ public class fitur extends javax.swing.JFrame {
                     .addComponent(crud, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(info_sistem, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
-                .addComponent(kembali, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(kembalikelola, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32))
         );
 
@@ -126,23 +123,20 @@ public class fitur extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-<<<<<<< HEAD
     private void info_sistemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_info_sistemActionPerformed
        
     }//GEN-LAST:event_info_sistemActionPerformed
 
-    private void kembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kembaliActionPerformed
+    private void kembaliActionPerformed(java.awt.event.ActionEvent evt) {                                        
         this.setVisible(false);
         new login().setVisible(true);
-    }//GEN-LAST:event_kembaliActionPerformed
+    }                                       
 
-=======
-    private void kembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kembaliActionPerformed
+    private void kembalikelolaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kembalikelolaActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        new login.login().setVisible(true);
-    }//GEN-LAST:event_kembaliActionPerformed
+        new login().setVisible(true);
+    }//GEN-LAST:event_kembalikelolaActionPerformed
 
     private void crudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crudActionPerformed
         // TODO add your handling code here:
@@ -152,7 +146,6 @@ public class fitur extends javax.swing.JFrame {
         kl.setVisible(true);
     }//GEN-LAST:event_crudActionPerformed
 
->>>>>>> 85c0d98e8308466b8618ef5bfa62b0070759ef13
     /**
      * @param args the command line arguments
      */
@@ -194,7 +187,7 @@ public class fitur extends javax.swing.JFrame {
     public static javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JButton kembali;
+    private javax.swing.JButton kembalikelola;
     // End of variables declaration//GEN-END:variables
 
 }

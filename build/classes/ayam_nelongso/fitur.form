@@ -102,7 +102,7 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="135" max="-2" attributes="0"/>
-                          <Component id="kembali" min="-2" pref="112" max="-2" attributes="0"/>
+                          <Component id="kembalikelola" min="-2" pref="112" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace pref="70" max="32767" attributes="0"/>
@@ -118,7 +118,7 @@
                       <Component id="info_sistem" alignment="3" min="-2" pref="76" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="34" max="32767" attributes="0"/>
-                  <Component id="kembali" min="-2" pref="74" max="-2" attributes="0"/>
+                  <Component id="kembalikelola" min="-2" pref="74" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -138,7 +138,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="crudActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="kembali">
+        <Component class="javax.swing.JButton" name="kembalikelola">
           <Properties>
             <Property name="text" type="java.lang.String" value="Back"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -148,7 +148,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="kembaliActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="kembalikelolaActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="info_sistem">
