@@ -387,7 +387,7 @@
                                   <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jLabel5" min="-2" pref="95" max="-2" attributes="0"/>
+                                  <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="bayar" min="-2" pref="153" max="-2" attributes="0"/>
                               </Group>
@@ -396,34 +396,28 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="jLabel17" alignment="1" min="-2" pref="108" max="-2" attributes="0"/>
-                                                  <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              </Group>
+                                              <Component id="jLabel17" alignment="1" min="-2" pref="108" max="-2" attributes="0"/>
+                                              <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <Group type="103" groupAlignment="0" attributes="0">
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="1" attributes="0">
                                               <Group type="102" attributes="0">
-                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                  <Component id="antrian7" min="-2" pref="19" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jumlah_minum" min="-2" pref="178" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" attributes="0">
                                                   <Group type="103" groupAlignment="1" attributes="0">
-                                                      <Group type="102" attributes="0">
-                                                          <Component id="antrian7" min="-2" pref="19" max="-2" attributes="0"/>
-                                                          <EmptySpace max="-2" attributes="0"/>
-                                                          <Component id="jumlah_minum" min="-2" pref="178" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <Group type="102" attributes="0">
-                                                          <Group type="103" groupAlignment="1" attributes="0">
-                                                              <Component id="antrian5" min="-2" pref="11" max="-2" attributes="0"/>
-                                                              <Component id="antrian6" min="-2" pref="11" max="-2" attributes="0"/>
-                                                          </Group>
-                                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                          <Group type="103" groupAlignment="0" attributes="0">
-                                                              <Component id="nama_minuman" min="-2" pref="180" max="-2" attributes="0"/>
-                                                              <Component id="jumlah_makan" min="-2" pref="180" max="-2" attributes="0"/>
-                                                          </Group>
-                                                      </Group>
+                                                      <Component id="antrian5" min="-2" pref="11" max="-2" attributes="0"/>
+                                                      <Component id="antrian6" min="-2" pref="11" max="-2" attributes="0"/>
                                                   </Group>
+                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="nama_minuman" min="-2" pref="180" max="-2" attributes="0"/>
+                                                      <Component id="jumlah_makan" min="-2" pref="180" max="-2" attributes="0"/>
+                                                  </Group>
+<<<<<<< HEAD
                                               </Group>
                                               <Group type="103" alignment="0" groupAlignment="1" attributes="0">
                                                   <Group type="102" alignment="1" attributes="0">
@@ -434,18 +428,21 @@
                                                       <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                                                       <Component id="nama_makanan" min="-2" pref="172" max="-2" attributes="0"/>
                                                   </Group>
+=======
+>>>>>>> 85c0d98e8308466b8618ef5bfa62b0070759ef13
                                               </Group>
                                           </Group>
                                           <EmptySpace pref="217" max="32767" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="1" attributes="0">
-                                              <Component id="antrian4" min="-2" pref="17" max="-2" attributes="0"/>
-                                              <Group type="102" attributes="0">
-                                                  <Component id="jLabel24" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                  <Component id="antrian2" min="-2" pref="16" max="-2" attributes="0"/>
-                                              </Group>
+                                              <Component id="jLabel20" min="-2" pref="131" max="-2" attributes="0"/>
+                                              <Component id="jLabel24" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="antrian2" alignment="1" min="-2" pref="16" max="-2" attributes="0"/>
+                                              <Component id="antrian4" alignment="1" min="-2" pref="17" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       </Group>
@@ -455,7 +452,7 @@
                           <EmptySpace min="-2" pref="701" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="161" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
                                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
@@ -467,11 +464,18 @@
                                           <EmptySpace max="32767" attributes="0"/>
                                           <Component id="kembalian" min="-2" pref="114" max="-2" attributes="0"/>
                                       </Group>
+<<<<<<< HEAD
                                       <Component id="jScrollPane1" min="-2" pref="740" max="-2" attributes="0"/>
                                       <Group type="102" alignment="1" attributes="0">
                                           <Component id="kem2" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                                           <Component id="total_bayar" min="-2" pref="114" max="-2" attributes="0"/>
+=======
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="nama_makanan" min="-2" pref="200" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="jScrollPane1" min="-2" pref="740" max="-2" attributes="0"/>
+>>>>>>> 85c0d98e8308466b8618ef5bfa62b0070759ef13
                                       </Group>
                                   </Group>
                                   <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
@@ -548,10 +552,12 @@
                               <Component id="jLabel24" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel20" alignment="3" min="-2" pref="12" max="-2" attributes="0"/>
-                              <Component id="antrian4" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="nama_makanan" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel20" alignment="0" pref="19" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="antrian4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="nama_makanan" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -577,7 +583,7 @@
                           <Component id="jScrollPane1" min="-2" pref="131" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="68" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLabel5" alignment="1" min="-2" max="-2" attributes="0"/>
                       <Component id="bayar" alignment="1" min="-2" max="-2" attributes="0"/>
@@ -873,7 +879,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="cc" red="cc" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Makanan    "/>
+            <Property name="text" type="java.lang.String" value="Makanan        :  "/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel21">
