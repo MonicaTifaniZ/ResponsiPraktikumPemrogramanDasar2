@@ -6,6 +6,7 @@
 package login;
 
 import ayam_nelongso.fitur;
+import ayam_nelongso.tampilan_nota;
 import ayam_nelongso.transaksi;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -45,6 +46,7 @@ public class login extends javax.swing.JFrame {
                 ResultSet r = s.executeQuery(sql);
                 boolean ada = r.next();
                 if (!ada) {
+                    
                     JOptionPane.showMessageDialog(null, "User Tidak Tersedia!");
                 } else {
                     String s_cek = r.getString("ID");
@@ -53,6 +55,7 @@ public class login extends javax.swing.JFrame {
                         this.setVisible(false);
                         transaksi kasir = new transaksi();
                         kasir.nama_kasir.setText(r.getString("ID"));
+                        kasir.antrian.setText("1");
                         kasir.setVisible(true);
                     } else if (c_cek == 'A' && passwordnya.equalsIgnoreCase(r.getString("Password"))) {
                         this.setVisible(false);

@@ -6,6 +6,7 @@
 
 package ayam_nelongso;
 import java.util.*;
+import login.login;
 /**
  *
  * @author ASUS
@@ -68,11 +69,21 @@ public class fitur extends javax.swing.JFrame {
         crud.setText("Kelola Menu");
         crud.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        kembali.setText("Exit");
+        kembali.setText("Back");
         kembali.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        kembali.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kembaliActionPerformed(evt);
+            }
+        });
 
         info_sistem.setText("Info");
         info_sistem.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        info_sistem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                info_sistemActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -106,6 +117,15 @@ public class fitur extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void info_sistemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_info_sistemActionPerformed
+       
+    }//GEN-LAST:event_info_sistemActionPerformed
+
+    private void kembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kembaliActionPerformed
+        this.setVisible(false);
+        new login().setVisible(true);
+    }//GEN-LAST:event_kembaliActionPerformed
 
     /**
      * @param args the command line arguments
